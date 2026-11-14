@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexora — Analytics that move your business forward</title>
+  <meta name="description" content="Nexora is the modern analytics platform that helps growing teams turn data into decisions. Beautiful dashboards, real-time insights and enterprise-grade security." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: {
+              50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc',
+              400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca',
+              800: '#3730a3', 900: '#312e81'
+            }
+          },
+          boxShadow: {
+            soft: '0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -8px rgba(15, 23, 42, 0.08)',
+            card: '0 1px 3px rgba(15, 23, 42, 0.05), 0 20px 40px -20px rgba(15, 23, 42, 0.15)',
+            glow: '0 10px 30px -10px rgba(79, 70, 229, 0.45)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+
+<body class="bg-white text-slate-700 antialiased font-sans">
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="navbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300 border-b border-transparent">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+      <div class="flex h-[72px] items-center justify-between">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2.5 group" aria-label="Nexora home">
+          <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 text-white shadow-glow transition-transform duration-300 group-hover:scale-105">
+            <i data-lucide="hexagon" class="h-5 w-5"></i>
+          </span>
+          <span class="text-xl font-bold tracking-tight text-slate-900">Nexora</span>
+        </a>
+
+        <!-- Desktop links -->
+        <ul class="hidden items-center gap-1 md:flex">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Desktop CTA -->
+        <div class="hidden items-center gap-3 md:flex">
+          <a href="#pricing" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Sign in</a>
+          <a href="#pricing" class="btn-primary">Get Started</a>
+        </div>
+
+        <!-- Mobile toggle -->
+        <button id="menu-toggle" type="button" class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-700 hover:bg-slate-100 transition-colors" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
+          <i data-lucide="menu" class="h-6 w-6 icon-open"></i>
+          <i data-lucide="x" class="h-6 w-6 icon-close hidden"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden border-t border-slate-100 bg-white/95 backdrop-blur">
+      <div class="space-y-1 px-4 py-4 sm:px-6">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#features" class="mobile-link">Features</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#pricing" class="mobile-link">Pricing</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+        <div class="pt-3">
+          <a href="#pricing" class="btn-primary w-full justify-center">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section id="home" class="relative overflow-hidden bg-slate-50/70 pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <div class="hero-grid pointer-events-none absolute inset-0" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -top-40 right-0 h-[480px] w-[480px] rounded-full bg-brand-100/60 blur-3xl" aria-hidden="true"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
+          <!-- Copy -->
+          <div class="lg:col-span-6 reveal">
+            <span class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+              <span class="h-1.5 w-1.5 rounded-full bg-brand-600"></span>
+              New: AI-powered forecasting is live
+            </span>
+
+            <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl lg:leading-[1.08]">
+              Analytics that move your <span class="text-brand-600">business forward</span>
+            </h1>
+
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
+              Nexora unifies your data into one beautiful workspace, so your team can spot trends, make confident decisions and grow faster — without the complexity.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="#pricing" class="btn-primary btn-lg">
+                Get Started
+                <i data-lucide="arrow-right" class="h-4 w-4"></i>
+              </a>
+              <a href="#features" class="btn-secondary btn-lg">
+                <i data-lucide="play-circle" class="h-4 w-4"></i>
+                Learn More
+              </a>
+            </div>
+
+            <!-- Trust indicators -->
+            <ul class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-500">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-brand-600"></i>No credit card required</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-brand-600"></i>14-day free trial</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-brand-600"></i>Cancel anytime</li>
+            </ul>
+          </div>
+
+          <!-- Dashboard mockup -->
+          <div class="lg:col-span-6 reveal reveal-delay-2">
+            <div class="relative">
+              <div class="relative rounded-2xl border border-slate-200 bg-white p-2 shadow-card">
+                <!-- Window chrome -->
+                <div class="flex items-center gap-1.5 px-3 py-2">
+                  <span class="h-2.5 w-2.5 rounded-full bg-slate-200"></span>
+                  <span class="h-2.5 w-2.5 rounded-full bg-slate-200"></span>
+                  <span class="h-2.5 w-2.5 rounded-full bg-slate-200"></span>
+                  <span class="ml-3 h-5 flex-1 rounded-md bg-slate-100"></span>
+                </div>
+
+                <div class="rounded-xl bg-slate-50 p-4 sm:p-5">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <p class="text-xs font-medium text-slate-500">Overview</p>
+                      <p class="text-sm font-semibold text-slate-900">Revenue performance</p>
+                    </div>
+                    <span class="rounded-md bg-white px-2.5 py-1 text-xs font-medium text-slate-600 border border-slate-200">Last 30 days</span>
+                  </div>
+
+                  <!-- KPI cards -->
+                  <div class="mt-4 grid grid-cols-3 gap-3">
+                    <div class="rounded-lg border border-slate-200 bg-white p-3">
+                      <p class="text-[11px] font-medium text-slate-500">Revenue</p>
+                      <p class="mt-1 text-lg font-bold text-slate-900">$84.2k</p>
+                      <p class="mt-0.5 text-[11px] font-medium text-emerald-600">+12.4%</p>
+                    </div>
+                    <div class="rounded-lg border border-slate-200 bg-white p-3">
+                      <p class="text-[11px] font-medium text-slate-500">Customers</p>
+                      <p class="mt-1 text-lg font-bold text-slate-900">3,912</p>
+                      <p class="mt-0.5 text-[11px] font-medium text-emerald-600">+8.1%</p>
+                    </div>
+                    <div class="rounded-lg border border-slate-200 bg-white p-3">
+                      <p class="text-[11px] font-medium text-slate-500">Churn</p>
+                      <p class="mt-1 text-lg font-bold text-slate-900">1.9%</p>
+                      <p class="mt-0.5 text-[11px] font-medium text-emerald-600">-0.4%</p>
+                    </div>
+                  </div>
+                  <!-- Chart -->
+                  <div class="mt-4 rounded-lg border border-slate-200 bg-white p-4">
+                    <div class="flex items-center justify-between">
+                      <p class="text-xs font-semibold text-slate-700">Monthly growth</p>
+                      <span class="flex items-center gap-1 text-[11px] font-medium text-brand-600"><span class="h-2 w-2 rounded-full bg-brand-500"></span>Revenue</span>
+                    </div>
+                    <svg viewBox="0 0 400 120" class="mt-3 h-28 w-full" fill="none" aria-hidden="true" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1">
+                          <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25" />
+                          <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+                        </linearGradient>
+                      </defs>
+                      <g stroke="#e2e8f0" stroke-width="1">
+                        <line x1="0" y1="30" x2="400" y2="30" /><line x1="0" y1="60" x2="400" y2="60" /><line x1="0" y1="90" x2="400" y2="90" />
+                      </g>
+                      <path d="M0 95 C 40 90, 60 70, 100 72 S 160 50, 200 55 S 260 30, 300 28 S 360 15, 400 10 L 400 120 L 0 120 Z" fill="url(#chartFill)" />
+                      <path class="chart-line" d="M0 95 C 40 90, 60 70, 100 72 S 160 50, 200 55 S 260 30, 300 28 S 360 15, 400 10" stroke="#4f46e5" stroke-width="2.5" stroke-linecap="round" />
+                      <circle cx="400" cy="10" r="4" fill="#4f46e5" stroke="#fff" stroke-width="2" />
+                    </svg>
+                  </div>
+
+                  <!-- Bottom widgets -->
+                  <div class="mt-4 grid grid-cols-2 gap-3">
+                    <div class="rounded-lg border border-slate-200 bg-white p-3">
+                      <p class="text-xs font-semibold text-slate-700">Top channels</p>
+                      <div class="mt-3 space-y-2">
+                        <div><div class="flex justify-between text-[11px] text-slate-500"><span>Organic</span><span>62%</span></div><div class="mt-1 h-1.5 rounded-full bg-slate-100"><div class="h-1.5 w-[62%] rounded-full bg-brand-500"></div></div></div>
+                        <div><div class="flex justify-between text-[11px] text-slate-500"><span>Referral</span><span>24%</span></div><div class="mt-1 h-1.5 rounded-full bg-slate-100"><div class="h-1.5 w-[24%] rounded-full bg-brand-400"></div></div></div>
+                        <div><div class="flex justify-between text-[11px] text-slate-500"><span>Paid</span><span>14%</span></div><div class="mt-1 h-1.5 rounded-full bg-slate-100"><div class="h-1.5 w-[14%] rounded-full bg-brand-300"></div></div></div>
+                      </div>
+                    </div>
+                    <div class="rounded-lg border border-slate-200 bg-white p-3">
+                      <p class="text-xs font-semibold text-slate-700">Recent activity</p>
+                      <ul class="mt-3 space-y-2.5">
+                        <li class="flex items-center gap-2"><span class="h-6 w-6 rounded-full bg-brand-100"></span><div class="h-2 flex-1 rounded bg-slate-100"></div></li>
+                        <li class="flex items-center gap-2"><span class="h-6 w-6 rounded-full bg-emerald-100"></span><div class="h-2 w-3/4 rounded bg-slate-100"></div></li>
+                        <li class="flex items-center gap-2"><span class="h-6 w-6 rounded-full bg-amber-100"></span><div class="h-2 w-5/6 rounded bg-slate-100"></div></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating badge -->
+              <div class="float-badge absolute -left-4 bottom-10 hidden items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-card sm:flex">
+                <span class="grid h-9 w-9 place-items-center rounded-lg bg-emerald-50 text-emerald-600"><i data-lucide="trending-up" class="h-5 w-5"></i></span>
+                <div>
+                  <p class="text-xs text-slate-500">Conversion rate</p>
+                  <p class="text-sm font-bold text-slate-900">+24.8% this month</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TRUSTED BY ===================== -->
+    <section class="border-y border-slate-100 bg-white py-12" aria-label="Trusted by">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 reveal">
+        <p class="text-center text-sm font-medium text-slate-500">Trusted by forward-thinking teams at</p>
+        <div class="mt-8 grid grid-cols-2 items-center gap-8 sm:grid-cols-3 lg:grid-cols-5">
+          <div class="logo-item"><i data-lucide="layers" class="h-6 w-6"></i><span>Stratus</span></div>
+          <div class="logo-item"><i data-lucide="zap" class="h-6 w-6"></i><span>Voltic</span></div>
+          <div class="logo-item"><i data-lucide="globe" class="h-6 w-6"></i><span>Orbital</span></div>
+          <div class="logo-item"><i data-lucide="aperture" class="h-6 w-6"></i><span>Lumen</span></div>
+          <div class="logo-item col-span-2 sm:col-span-1"><i data-lucide="box" class="h-6 w-6"></i><span>Cubix</span></div>
+        </div>
+      </div>
+    </section>
+    <!-- ===================== FEATURES ===================== -->
+    <section id="features" class="bg-white py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <span class="section-eyebrow">Features</span>
+          <h2 class="section-title">Everything you need to grow with confidence</h2>
+          <p class="section-desc">Powerful tools designed to be simple. Nexora gives your team clarity without the clutter.</p>
+        </div>
+
+        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="feature-card reveal">
+            <span class="feature-icon"><i data-lucide="bar-chart-3" class="h-6 w-6"></i></span>
+            <h3 class="mt-5 text-lg font-semibold text-slate-900">Real-time dashboards</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Live, customizable dashboards that update the moment your data does. No refresh required.</p>
+          </article>
+          <article class="feature-card reveal reveal-delay-1">
+            <span class="feature-icon"><i data-lucide="sparkles" class="h-6 w-6"></i></span>
+            <h3 class="mt-5 text-lg font-semibold text-slate-900">AI-powered insights</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Surface anomalies, forecasts and opportunities automatically with built-in machine learning.</p>
+          </article>
+          <article class="feature-card reveal reveal-delay-2">
+            <span class="feature-icon"><i data-lucide="plug" class="h-6 w-6"></i></span>
+            <h3 class="mt-5 text-lg font-semibold text-slate-900">100+ integrations</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Connect Stripe, HubSpot, Postgres, Snowflake and more in minutes with one-click connectors.</p>
+          </article>
+          <article class="feature-card reveal reveal-delay-3">
+            <span class="feature-icon"><i data-lucide="shield-check" class="h-6 w-6"></i></span>
+            <h3 class="mt-5 text-lg font-semibold text-slate-900">Enterprise security</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">SOC 2 Type II, SSO, role-based access and end-to-end encryption keep your data protected.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT / WHY CHOOSE US ===================== -->
+    <section id="about" class="bg-slate-50/70 py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+          <!-- Image -->
+          <div class="relative reveal">
+            <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-card">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
+                alt="Team collaborating around a table in a bright modern office"
+                class="h-[420px] w-full object-cover lg:h-[520px]"
+                loading="lazy" width="1200" height="800" />
+            </div>
+            <div class="absolute -bottom-6 -right-4 hidden rounded-xl border border-slate-200 bg-white p-4 shadow-card sm:block lg:-right-8">
+              <div class="flex items-center gap-3">
+                <div class="flex -space-x-2">
+                  <img class="h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="" loading="lazy" />
+                  <img class="h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="" loading="lazy" />
+                  <img class="h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=80&q=80" alt="" loading="lazy" />
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-slate-900">12,000+ teams</p>
+                  <p class="text-xs text-slate-500">already onboard</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="reveal reveal-delay-1">
+            <span class="section-eyebrow">Why choose us</span>
+            <h2 class="section-title text-left">Built for teams who want clarity, not complexity</h2>
+            <p class="mt-4 text-base leading-relaxed text-slate-600">
+              We obsess over the details so you don't have to. Nexora is designed to feel effortless from day one, and to scale with you as your data and ambitions grow.
+            </p>
+
+            <ul class="mt-8 space-y-5">
+              <li class="flex gap-4">
+                <span class="benefit-icon"><i data-lucide="rocket" class="h-5 w-5"></i></span>
+                <div>
+                  <h3 class="font-semibold text-slate-900">Set up in minutes</h3>
+                  <p class="mt-1 text-sm text-slate-600">Connect your sources and get your first dashboard before your coffee gets cold.</p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <span class="benefit-icon"><i data-lucide="users" class="h-5 w-5"></i></span>
+                <div>
+                  <h3 class="font-semibold text-slate-900">Collaborate effortlessly</h3>
+                  <p class="mt-1 text-sm text-slate-600">Share reports, leave comments and keep everyone aligned around the same numbers.</p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <span class="benefit-icon"><i data-lucide="headset" class="h-5 w-5"></i></span>
+                <div>
+                  <h3 class="font-semibold text-slate-900">World-class support</h3>
+                  <p class="mt-1 text-sm text-slate-600">Real humans with a median response time under 2 hours, around the clock.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="mt-10">
+              <a href="#pricing" class="btn-primary btn-lg">
+                Start your free trial
+                <i data-lucide="arrow-right" class="h-4 w-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STATISTICS ===================== -->
+    <section class="bg-white py-20 lg:py-24" aria-label="Statistics">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 gap-y-12 gap-x-6 text-center lg:grid-cols-4 reveal">
+          <div>
+            <p class="stat-number"><span class="counter" data-target="12000" data-suffix="+">0</span></p>
+            <p class="stat-label">Active teams</p>
+          </div>
+          <div>
+            <p class="stat-number"><span class="counter" data-target="99.9" data-decimals="1" data-suffix="%">0</span></p>
+            <p class="stat-label">Uptime SLA</p>
+          </div>
+          <div>
+            <p class="stat-number"><span class="counter" data-target="4.9" data-decimals="1" data-suffix="/5">0</span></p>
+            <p class="stat-label">Average rating</p>
+          </div>
+          <div>
+            <p class="stat-number"><span class="counter" data-target="2" data-prefix="$" data-suffix="B+">0</span></p>
+            <p class="stat-label">Revenue analyzed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section id="testimonials" class="bg-slate-50/70 py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <span class="section-eyebrow">Testimonials</span>
+          <h2 class="section-title">Loved by teams around the world</h2>
+          <p class="section-desc">Don't take our word for it — here's what our customers have to say.</p>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-3">
+          <figure class="testimonial-card reveal">
+            <div class="flex gap-0.5 text-amber-400" aria-label="5 out of 5 stars">
+              <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+            </div>
+            <blockquote class="mt-4 text-sm leading-relaxed text-slate-600">
+              "Nexora replaced three tools for us overnight. Our weekly reporting went from a full day of work to a five-minute review. The team absolutely loves it."
+            </blockquote>
+            <figcaption class="mt-6 flex items-center gap-3">
+              <img class="h-11 w-11 rounded-full object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Portrait of Sarah Mitchell" loading="lazy" />
+              <div>
+                <p class="text-sm font-semibold text-slate-900">Sarah Mitchell</p>
+                <p class="text-xs text-slate-500">VP of Operations, Stratus</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-card reveal reveal-delay-1">
+            <div class="flex gap-0.5 text-amber-400" aria-label="5 out of 5 stars">
+              <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+            </div>
+            <blockquote class="mt-4 text-sm leading-relaxed text-slate-600">
+              "The AI forecasting caught a churn risk we would have completely missed. That single insight paid for the annual subscription many times over."
+            </blockquote>
+            <figcaption class="mt-6 flex items-center gap-3">
+              <img class="h-11 w-11 rounded-full object-cover" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" alt="Portrait of David Chen" loading="lazy" />
+              <div>
+                <p class="text-sm font-semibold text-slate-900">David Chen</p>
+                <p class="text-xs text-slate-500">Co-founder & CEO, Voltic</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-card reveal reveal-delay-2">
+            <div class="flex gap-0.5 text-amber-400" aria-label="5 out of 5 stars">
+              <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+            </div>
+            <blockquote class="mt-4 text-sm leading-relaxed text-slate-600">
+              "Beautiful, fast and genuinely easy to use. Our non-technical stakeholders finally build their own reports without pinging the data team."
+            </blockquote>
+            <figcaption class="mt-6 flex items-center gap-3">
+              <img class="h-11 w-11 rounded-full object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80" alt="Portrait of Amara Okafor" loading="lazy" />
+              <div>
+                <p class="text-sm font-semibold text-slate-900">Amara Okafor</p>
+                <p class="text-xs text-slate-500">Head of Data, Orbital</p>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <!-- ===================== PRICING ===================== -->
+    <section id="pricing" class="bg-white py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center reveal">
+          <span class="section-eyebrow">Pricing</span>
+          <h2 class="section-title">Simple, transparent pricing</h2>
+          <p class="section-desc">Start free, upgrade when you're ready. No hidden fees, ever.</p>
+
+          <!-- Billing toggle -->
+          <div class="mt-8 inline-flex items-center gap-3 rounded-full border border-slate-200 bg-slate-50 p-1 text-sm font-medium">
+            <button type="button" class="billing-btn is-active" data-billing="monthly">Monthly</button>
+            <button type="button" class="billing-btn" data-billing="yearly">Yearly <span class="ml-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] font-semibold text-emerald-700">-20%</span></button>
+          </div>
+        </div>
+
+        <div class="mt-14 grid gap-6 lg:grid-cols-3 lg:items-start">
+          <!-- Starter -->
+          <article class="pricing-card reveal">
+            <h3 class="text-lg font-semibold text-slate-900">Starter</h3>
+            <p class="mt-1 text-sm text-slate-500">For individuals and small projects.</p>
+            <p class="mt-6 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold tracking-tight text-slate-900">$<span class="price" data-monthly="19" data-yearly="15">19</span></span>
+              <span class="text-sm text-slate-500">/ month</span>
+            </p>
+            <a href="#contact" class="btn-secondary mt-6 w-full justify-center">Start free trial</a>
+            <ul class="mt-8 space-y-3 text-sm text-slate-600">
+              <li class="plan-item">Up to 3 data sources</li>
+              <li class="plan-item">5 dashboards</li>
+              <li class="plan-item">7-day data history</li>
+              <li class="plan-item">Email support</li>
+            </ul>
+          </article>
+
+          <!-- Pro (popular) -->
+          <article class="pricing-card pricing-card--popular reveal reveal-delay-1">
+            <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-brand-600 px-3 py-1 text-xs font-semibold text-white shadow-glow">Most popular</span>
+            <h3 class="text-lg font-semibold text-slate-900">Pro</h3>
+            <p class="mt-1 text-sm text-slate-500">For growing teams that need more.</p>
+            <p class="mt-6 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold tracking-tight text-slate-900">$<span class="price" data-monthly="49" data-yearly="39">49</span></span>
+              <span class="text-sm text-slate-500">/ month</span>
+            </p>
+            <a href="#contact" class="btn-primary mt-6 w-full justify-center">Get started</a>
+            <ul class="mt-8 space-y-3 text-sm text-slate-600">
+              <li class="plan-item">Unlimited data sources</li>
+              <li class="plan-item">Unlimited dashboards</li>
+              <li class="plan-item">AI-powered insights</li>
+              <li class="plan-item">1-year data history</li>
+              <li class="plan-item">Priority support</li>
+            </ul>
+          </article>
+
+          <!-- Enterprise -->
+          <article class="pricing-card reveal reveal-delay-2">
+            <h3 class="text-lg font-semibold text-slate-900">Enterprise</h3>
+            <p class="mt-1 text-sm text-slate-500">For organizations with advanced needs.</p>
+            <p class="mt-6 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold tracking-tight text-slate-900">$<span class="price" data-monthly="129" data-yearly="103">129</span></span>
+              <span class="text-sm text-slate-500">/ month</span>
+            </p>
+            <a href="#contact" class="btn-secondary mt-6 w-full justify-center">Contact sales</a>
+            <ul class="mt-8 space-y-3 text-sm text-slate-600">
+              <li class="plan-item">Everything in Pro</li>
+              <li class="plan-item">SSO & advanced permissions</li>
+              <li class="plan-item">Dedicated success manager</li>
+              <li class="plan-item">Custom SLAs & onboarding</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- ===================== FAQ ===================== -->
+    <section id="faq" class="bg-slate-50/70 py-20 lg:py-28">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center reveal">
+          <span class="section-eyebrow">FAQ</span>
+          <h2 class="section-title">Frequently asked questions</h2>
+          <p class="section-desc">Everything you need to know about the product and billing.</p>
+        </div>
+
+        <div class="mt-12 space-y-3 reveal reveal-delay-1" id="faq-list">
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-1">
+              <span>How does the 14-day free trial work?</span>
+              <i data-lucide="chevron-down" class="faq-icon h-5 w-5"></i>
+            </button>
+            <div id="faq-1" class="faq-panel">
+              <p>You get full access to every Pro feature for 14 days — no credit card required. At the end of the trial you can pick a plan or downgrade to Starter. Nothing is charged automatically.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-2">
+              <span>Can I change or cancel my plan at any time?</span>
+              <i data-lucide="chevron-down" class="faq-icon h-5 w-5"></i>
+            </button>
+            <div id="faq-2" class="faq-panel">
+              <p>Absolutely. Upgrade, downgrade or cancel from your billing settings whenever you like. Changes are prorated, and cancelling keeps your workspace readable until the end of your billing period.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-3">
+              <span>Which data sources do you integrate with?</span>
+              <i data-lucide="chevron-down" class="faq-icon h-5 w-5"></i>
+            </button>
+            <div id="faq-3" class="faq-panel">
+              <p>Nexora connects natively with 100+ sources including Stripe, HubSpot, Salesforce, Google Analytics, Postgres, MySQL, BigQuery and Snowflake. You can also push custom data through our REST API or CSV upload.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-4">
+              <span>Is my data secure?</span>
+              <i data-lucide="chevron-down" class="faq-icon h-5 w-5"></i>
+            </button>
+            <div id="faq-4" class="faq-panel">
+              <p>Yes. We're SOC 2 Type II certified and GDPR compliant. All data is encrypted in transit (TLS 1.3) and at rest (AES-256), and Enterprise plans include SSO, audit logs and region-specific data residency.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-5">
+              <span>Do you offer discounts for startups or non-profits?</span>
+              <i data-lucide="chevron-down" class="faq-icon h-5 w-5"></i>
+            </button>
+            <div id="faq-5" class="faq-panel">
+              <p>We do. Early-stage startups and registered non-profits can get up to 50% off any plan for the first year. Reach out through the contact form and we'll set you up.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===================== FINAL CTA ===================== -->
+    <section id="contact" class="bg-white py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="relative overflow-hidden rounded-3xl border border-brand-100 bg-brand-50 px-6 py-16 text-center sm:px-12 lg:py-20 reveal">
+          <div class="hero-grid pointer-events-none absolute inset-0 opacity-60" aria-hidden="true"></div>
+          <div class="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-brand-200/50 blur-3xl" aria-hidden="true"></div>
+
+          <div class="relative mx-auto max-w-2xl">
+            <h2 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">Ready to see your business clearly?</h2>
+            <p class="mt-4 text-lg text-slate-600">Join 12,000+ teams using Nexora to make smarter, faster decisions. Get started in minutes — free for 14 days.</p>
+
+            <form id="cta-form" class="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row" novalidate>
+              <label for="cta-email" class="sr-only">Work email</label>
+              <input id="cta-email" type="email" name="email" required placeholder="Enter your work email"
+                class="h-12 flex-1 rounded-xl border border-slate-200 bg-white px-4 text-sm text-slate-900 placeholder:text-slate-400 shadow-sm outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-100" />
+              <button type="submit" class="btn-primary btn-lg justify-center">Get Started</button>
+            </form>
+            <p id="cta-message" class="mt-3 h-5 text-sm text-slate-500" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="border-t border-slate-100 bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-12">
+        <!-- Brand -->
+        <div class="lg:col-span-4">
+          <a href="#home" class="flex items-center gap-2.5" aria-label="Nexora home">
+            <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 text-white"><i data-lucide="hexagon" class="h-5 w-5"></i></span>
+            <span class="text-xl font-bold tracking-tight text-slate-900">Nexora</span>
+          </a>
+          <p class="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">The modern analytics platform that helps growing teams turn data into confident decisions.</p>
+          <div class="mt-6 flex items-center gap-3">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter"><i data-lucide="twitter" class="h-4 w-4"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i data-lucide="linkedin" class="h-4 w-4"></i></a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i data-lucide="github" class="h-4 w-4"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube"><i data-lucide="youtube" class="h-4 w-4"></i></a>
+          </div>
+        </div>
+        <!-- Links -->
+        <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-4">
+          <div>
+            <h3 class="footer-heading">Product</h3>
+            <ul class="footer-list">
+              <li><a href="#features" class="footer-link">Features</a></li>
+              <li><a href="#pricing" class="footer-link">Pricing</a></li>
+              <li><a href="#features" class="footer-link">Integrations</a></li>
+              <li><a href="#faq" class="footer-link">Changelog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-heading">Company</h3>
+            <ul class="footer-list">
+              <li><a href="#about" class="footer-link">About</a></li>
+              <li><a href="#testimonials" class="footer-link">Customers</a></li>
+              <li><a href="#contact" class="footer-link">Careers</a></li>
+              <li><a href="#contact" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-heading">Resources</h3>
+            <ul class="footer-list">
+              <li><a href="#faq" class="footer-link">Help center</a></li>
+              <li><a href="#faq" class="footer-link">FAQ</a></li>
+              <li><a href="#features" class="footer-link">API docs</a></li>
+              <li><a href="#about" class="footer-link">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-heading">Legal</h3>
+            <ul class="footer-list">
+              <li><a href="#contact" class="footer-link">Privacy</a></li>
+              <li><a href="#contact" class="footer-link">Terms</a></li>
+              <li><a href="#contact" class="footer-link">Security</a></li>
+              <li><a href="#contact" class="footer-link">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-100 pt-8 sm:flex-row">
+        <p class="text-sm text-slate-500">&copy; <span id="year"></span> Nexora, Inc. All rights reserved.</p>
+        <p class="flex items-center gap-1.5 text-sm text-slate-500"><i data-lucide="map-pin" class="h-4 w-4"></i>San Francisco, CA</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="back-to-top" type="button" class="fixed bottom-6 right-6 z-40 grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:text-brand-600 opacity-0 pointer-events-none" aria-label="Back to top">
+    <i data-lucide="arrow-up" class="h-5 w-5"></i>
+  </button>
+
+  <script src="main.js"></script>
+</body>
+</html>
